@@ -16,7 +16,7 @@ These appear on the pages as written. Change them in `src/pages/` and rebuild.
 - Private sessions: minimum 7, maximum 12 at the bench, $135 per maker, bring
   your own snacks and non alcoholic drinks, held for a week while the group
   gathers.
-- Boxing a broom for air travel and shipping from the Broom Co. shop.
+- Shipping the finished broom home: the site says the workshop ships it to the guest's door and emails tracking. Confirm whether it is included in the $135 or charged, US only or international, and how long it takes, then add that to the workshop and FAQ pages.
 - Gift cards do not expire (also true under Massachusetts law for 7 years).
 - Step free entrance, bench height 30 inches, lower work surface and
   wheelchair space on a day's notice, restroom on the same floor, large print

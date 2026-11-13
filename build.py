@@ -29,9 +29,9 @@ GIFT_URL = "https://fareharbor.com/embeds/book/witchcitywalkingtours/gift-cards/
 # slug, nav label (None = not in nav), title tag, meta description, parent slug, extra schema type
 PAGES = [
     dict(slug="", nav="Home", title="Broom Making Workshops in Salem, MA",
-         desc="Make your own full size broom in a 90 minute hands on workshop at 32 Derby Square, Salem. $135 per person, all materials included, book direct.", parent=None),
+         desc="Make your own full size broom in a 90 minute hands-on workshop at 32 Derby Square, Salem. $135 per person, all materials included, and we ship your broom home.", parent=None),
     dict(slug="workshop", nav="The workshop", title="The Broom Making Workshop",
-         desc="What happens in the 90 minute broom making workshop in Salem: choose a handle, wind and bind the broomcorn, stitch, add charms and ribbons, take it home.", parent=""),
+         desc="What happens in the 90 minute broom making workshop in Salem: choose a handle, wind and bind the broomcorn, stitch, add charms and ribbons, then carry it out or let us ship it home.", parent=""),
     dict(slug="book", nav=None, title="Book a Broom Making Workshop",
          desc="See open dates and times for the Salem broom making workshop and book your seat. $135 per person, small groups, secure checkout.", parent=""),
     dict(slug="private-groups", nav="Private groups", title="Private Broom Making Parties and Group Events",
@@ -101,7 +101,7 @@ def schema(page, body):
                         "availability": "https://schema.org/InStock",
                         "itemOffered": {"@type": "Service", "@id": SITE_URL + "/workshop/#service",
                                         "name": "Broom Making Workshop", "serviceType": "Craft workshop",
-                                        "description": "A 90 minute hands on class where you make a full size broomcorn broom and take it home.",
+                                        "description": "A 90 minute hands-on class where you make a full size broomcorn broom and take it home.",
                                         "provider": {"@id": SITE_URL + "/#business"},
                                         "areaServed": {"@type": "City", "name": "Salem", "containedInPlace": {"@type": "State", "name": "Massachusetts"}}}},
     }
@@ -246,13 +246,13 @@ def main():
     write(os.path.join(ROOT, "sitemap.xml"), f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
     write(os.path.join(ROOT, "robots.txt"), f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
     lines = [f"# {BIZ['name']}", "",
-             "> Hands on broom making workshops in downtown Salem, Massachusetts. 90 minutes, $135 per person, all materials included, every maker takes a full size broom home. Held at 32 Derby Square. Booking runs on FareHarbor. Part of the Witch City Experiences family with Witch City Walking Tours and Witch City Broom Co.", "",
+             "> Hands-on broom making workshops in downtown Salem, Massachusetts. 90 minutes, $135 per person, all materials included, every maker takes a full size broom home, or has it shipped home by the workshop. Held at 32 Derby Square. Booking runs on FareHarbor. Part of the Witch City Experiences family with Witch City Walking Tours and Witch City Broom Co.", "",
              "## Pages", ""]
     for p in PAGES:
         lines.append(f"- [{p['title']}]({url(p['slug'])}): {p['desc']}")
     lines += ["", "## Facts", "",
               f"- Address: {BIZ['street']}, {BIZ['city']}, {BIZ['region']} {BIZ['zip']}",
-              f"- Phone: {BIZ['phone_display']}", f"- Price: ${BIZ['price']} per person", "- Length: 90 minutes",
+              f"- Phone: {BIZ['phone_display']}", f"- Price: ${BIZ['price']} per person", "- Length: 90 minutes", "- Shipping: the workshop ships each finished broom to the guest's home on request",
               f"- Book: {BOOK_URL}"]
     write(os.path.join(ROOT, "llms.txt"), "\n".join(lines) + "\n")
     open(os.path.join(ROOT, ".nojekyll"), "w").close()
