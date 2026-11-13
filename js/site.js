@@ -40,3 +40,25 @@
     }
   } catch (e) { /* storage blocked: booking still works, just without the ref */ }
 })();
+
+/* Review slider on the home page: buttons scroll the list one card at a time.
+   Without JavaScript the list still scrolls sideways by touch, wheel or keyboard. */
+(function () {
+  document.querySelectorAll('[data-slider]').forEach(function (s) {
+    var track = s.querySelector('.slider-track');
+    var prev = s.querySelector('[data-prev]');
+    var next = s.querySelector('[data-next]');
+    if (!track || !prev || !next) return;
+    function step() { var li = track.querySelector('li'); return li ? li.getBoundingClientRect().width + 24 : 300; }
+    function update() {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    }
+    var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: smooth }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: smooth }); });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+})();

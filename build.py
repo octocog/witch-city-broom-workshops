@@ -23,6 +23,30 @@ BIZ = {
     "zip": "01970",
     "price": "135",
 }
+REVIEWS = json.load(open(os.path.join(ROOT, "src", "reviews.json"), encoding="utf-8"))
+MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+STAR_SYMBOL = """<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="star" viewBox="0 0 24 24"><path d="M12 1.6c.5 0 .9.3 1.1.8l2.3 5.4 5.8.6c1.1.1 1.5 1.5.7 2.2l-4.4 3.9 1.3 5.8c.2 1.1-.9 1.9-1.8 1.3L12 18.6l-5 3c-.9.6-2-.2-1.8-1.3l1.3-5.8-4.4-3.9c-.8-.7-.4-2.1.7-2.2l5.8-.6 2.3-5.4c.2-.5.6-.8 1.1-.8z"/></symbol></svg>"""
+
+def stars_html():
+    return ('<span class="stars" role="img" aria-label="Rated 5 out of 5 stars">' + '<svg class="star"><use href="#star"/></svg>' * 5 + '</span>')
+
+def review_card(r, tag="li"):
+    y, m = r["date"].split("-")
+    when = f"{MONTHS[int(m)-1]} {y}"
+    return (f'<{tag} class="review">{stars_html()}<blockquote><p>{html.escape(r["text"])}</p></blockquote>'
+            f'<footer><b>{html.escape(r["name"])}</b> <span>Google review, {when}</span></footer></{tag}>')
+
+def reviews_home():
+    cards = "".join(review_card(r) for r in REVIEWS if r.get("home"))
+    return f"""<div class="slider" data-slider>
+      <div class="slider-controls"><button type="button" class="slider-btn" data-prev aria-label="Previous reviews">&#8592;</button><button type="button" class="slider-btn" data-next aria-label="Next reviews">&#8594;</button></div>
+      <ul class="slider-track" tabindex="0" aria-label="Reviews, scroll sideways for more">{cards}</ul>
+    </div>"""
+
+def reviews_all():
+    return '<ul class="review-grid">' + "".join(review_card(r) for r in REVIEWS) + "</ul>"
+
 BOOK_URL = "https://fareharbor.com/embeds/book/witchcitywalkingtours/items/538917/?full-items=yes&flow=14733"
 GIFT_URL = "https://fareharbor.com/embeds/book/witchcitywalkingtours/gift-cards/?full-items=yes"
 
@@ -149,6 +173,7 @@ def render(page):
     page_url = url(page["slug"])
     og_type = "article" if page.get("article") else "website"
     body = body.replace("{{BREADCRUMB}}", breadcrumb_html(page)).replace("{{BOOK_URL}}", BOOK_URL).replace("{{GIFT_URL}}", GIFT_URL)
+    body = body.replace("{{REVIEWS_HOME}}", reviews_home()).replace("{{REVIEWS_ALL}}", reviews_all())
     body = body.replace("{{PHONE}}", BIZ["phone_display"]).replace("{{PHONE_TEL}}", BIZ["phone"]).replace("{{EMAIL}}", BIZ["email"])
     return f"""<!doctype html>
 <html lang="en">
@@ -196,6 +221,7 @@ def render(page):
   </div>
 </header>
 <main id="main" tabindex="-1">
+{STAR_SYMBOL}
 {body}
 </main>
 <section class="section section-ink" aria-labelledby="family-h">

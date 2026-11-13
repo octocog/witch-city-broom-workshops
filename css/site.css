@@ -226,3 +226,27 @@ address{font-style:normal;font-family:var(--font-display);font-size:1.5rem;line-
   .broom-band img{width:210%;max-width:none;margin-left:-112%}
 }
 @media print{.site-nav,.nav-toggle,.skip{display:none}}
+
+/* reviews: stars, cards, home slider */
+.stars{display:inline-flex;gap:3px;margin-bottom:12px}
+.star{width:20px;height:20px;fill:var(--gold);stroke:#B57A1C;stroke-width:.8;stroke-linejoin:round;transform:rotate(-6deg)}
+.star:nth-child(2n){transform:rotate(5deg)}
+.star:nth-child(3){transform:rotate(0) scale(1.08)}
+.review{margin:0;background:#fff;color:#1E2B30;border-radius:var(--radius);padding:26px 26px 22px;border:1px solid var(--line);display:flex;flex-direction:column}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .review{background:#13313D;color:#F2EAD6;border-color:rgba(255,255,255,.14)}}
+.review blockquote{margin:0 0 16px;flex:1}
+.review blockquote p{font-family:var(--font-display);font-size:1.12rem;line-height:1.5;margin:0;max-width:none}
+.review footer{font-size:.92rem;color:var(--mute)}
+.review footer b{font-weight:600;color:inherit;margin-right:6px}
+.review-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.slider{position:relative}
+.slider-track{list-style:none;margin:0;padding:4px 4px 14px;display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px) / 3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--handle) transparent}
+.slider-track>li{scroll-snap-align:start}
+.slider-track:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.slider-controls{display:none;justify-content:flex-end;gap:10px;margin-bottom:14px}
+.js .slider-controls{display:flex}
+.slider-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--head);background:transparent;color:var(--head);font-size:1.2rem;cursor:pointer;line-height:1}
+.slider-btn:hover{background:var(--gold-pale)}
+.slider-btn[disabled]{opacity:.35;cursor:default}
+@media (max-width:900px){.review-grid{grid-template-columns:1fr 1fr}.slider-track{grid-auto-columns:calc((100% - 24px) / 2)}}
+@media (max-width:640px){.review-grid{grid-template-columns:1fr}.slider-track{grid-auto-columns:88%}}

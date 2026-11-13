@@ -38,9 +38,12 @@ These appear on the pages as written. Change them in `src/pages/` and rebuild.
 - FareHarbor gift cards: the link on `/gift-cards/` assumes gift cards are
   switched on for the Walking Tours company. Confirm the URL in the FareHarbor
   dashboard.
-- Google Business Profile for the workshop at 32 Derby Square, then swap the
-  review links on `/reviews/` for the profile's write a review link and
-  connect a live review feed.
+- Reviews on the site are 17 five star Google reviews of the workshop taken
+  from the Witch City Broom Co. profile on 2026-11-13, trimmed to the workshop
+  parts, names shortened to first name and last initial. They live in
+  `src/reviews.json`; add or remove there and rebuild. Once the workshop has
+  its own Google Business Profile, swap the write a review links on
+  `/reviews/` for that profile's link.
 - Google Analytics and the Google Ads tag: add the tag snippet to the head in
   `build.py` once the property exists. Add fareharbor.com to the cross domain
   list in Analytics so bookings credit the ad click.
