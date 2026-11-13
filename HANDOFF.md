@@ -48,16 +48,26 @@ These appear on the pages as written. Change them in `src/pages/` and rebuild.
   `build.py` once the property exists. Add fareharbor.com to the cross domain
   list in Analytics so bookings credit the ad click.
 
+## Besom copy, revised 2026-11-13
+
+The broom copy was rewritten to describe a besom (round witch's broom) after
+Dan confirmed the style. Sources: the workshop photo, the Broom Co. workshop
+page and guest reviews. Still to confirm with Beth:
+
+- Handles are natural wood branches (taken from one photo).
+- Dried flowers and greenery are offered to every maker.
+- The order of the four steps in the timeline, and the times beside them.
+- The broom stands about four feet tall.
+- Scissors are the only cutting tool on the bench (terms page).
+
 ## Photos to shoot
 
 Replace these SVG placeholders in `images/` with photos of the same shape.
 
-- `ph-hero.svg` 16:9, hands winding broomcorn (reserved for a future hero photo)
+- `ph-hero.svg` 16:9, hands binding broomcorn (reserved for a future hero photo)
 - `ph-group.svg` 4:5, a group holding finished brooms
 - `ph-private.svg` 16:9, a private party at the long bench
-- `ph-finished.svg` 16:9, one finished broom with ribbon and charm
-- `ph-detail.svg` 1:1, stitching the shoulders
-- `ph-makers.svg` 4:5, the makers at the bench
+- `ph-detail.svg` 1:1, wrapping the binding
 - `ph-room.svg` 16:9, the room at Derby Square
 - `ph-journal-rainy.svg`, `ph-journal-lore.svg`, `ph-journal-gift.svg` 16:9
 
