@@ -1,0 +1,46 @@
+<div class="page-head"><div class="wrap">{{BREADCRUMB}}<h1>Private groups and parties</h1><p>Book the room and the session is yours alone. Same makers, same materials, your music and your people.</p></div></div>
+
+<section class="section" aria-labelledby="pg-h">
+  <div class="wrap split split-wide">
+    <div class="photo"><img src="/images/ph-private.svg" alt="A private party seated around the long workshop bench, brooms in progress" width="1600" height="1000"></div>
+    <div>
+      <h2 id="pg-h">How a private session works</h2>
+      <p>Seven or more makers closes the room to the public. You pick the date and start time, including evenings. We set the bench for your group, play what you want to hear, and leave time at the end for photos with the finished brooms.</p>
+      <p>Bring your own snacks and non alcoholic drinks. Two hours is enough: ninety minutes of making and a half hour of settling in and showing off.</p>
+      <ul class="dots">
+        <li>Bachelorette and bachelor weekends</li>
+        <li>Birthdays and anniversaries</li>
+        <li>Team outings and offsites</li>
+        <li>School, scout and youth groups</li>
+        <li>Bridal and baby showers</li>
+        <li>Family reunions and holiday parties</li>
+      </ul>
+      <p class="note">Private sessions are $135 per maker with a minimum of seven. Up to twelve at the bench. Larger groups split into back to back sessions. Ask about school and nonprofit rates.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="inq-h">
+  <div class="wrap">
+    <h2 id="inq-h">Ask about a date</h2>
+    <p class="intro">Tell us when and how many. We answer within one business day and hold the date for a week while you gather the group. Or call <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a>.</p>
+    <form class="form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="row">
+        <div><label for="pg-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="pg-name" name="name" type="text" autocomplete="name" required aria-required="true"></div>
+        <div><label for="pg-email">Email <span class="req" aria-hidden="true">*</span></label><input id="pg-email" name="email" type="email" autocomplete="email" required aria-required="true"></div>
+      </div>
+      <div class="row">
+        <div><label for="pg-phone">Phone</label><input id="pg-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="pg-size">Group size <span class="req" aria-hidden="true">*</span></label><input id="pg-size" name="group_size" type="number" min="7" max="60" inputmode="numeric" required aria-required="true"></div>
+      </div>
+      <div class="row">
+        <div><label for="pg-date">Preferred date</label><p class="hint" id="pg-date-hint">A second choice helps.</p><input id="pg-date" name="preferred_date" type="text" aria-describedby="pg-date-hint" placeholder="Sat, Mar 14, evening"></div>
+        <div><label for="pg-occ">Occasion</label><select id="pg-occ" name="occasion"><option value="">Choose one</option><option>Bachelorette or bachelor</option><option>Birthday or anniversary</option><option>Team outing</option><option>School or youth group</option><option>Shower</option><option>Something else</option></select></div>
+      </div>
+      <div><label for="pg-msg">Anything else</label><textarea id="pg-msg" name="message"></textarea></div>
+      <p class="hint">Fields marked <span class="req">*</span> are required.</p>
+      <button class="btn btn-gold" type="submit">Send the request</button>
+    </form>
+  </div>
+</section>
