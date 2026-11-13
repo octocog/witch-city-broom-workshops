@@ -15,13 +15,13 @@ These appear on the pages as written. Change them in `src/pages/` and rebuild.
 - Session times (home, visit): Mon to Thu 11:00, 2:00, 4:30; Fri and Sat adds
   7:00; Sun 11:00 and 2:00; extra sessions in October. Illustrative.
 - Capacity of 12 makers per session.
-- Ages 10 and up, with a booked adult beside anyone under 16.
+- All ages welcome, and one guest per maker may come to watch free of charge (both from Beth, 2026-11-13). Not stated on the site: whether very young children need an adult making beside them, and whether there is a limit on guests when a session is full.
 - Free changes and cancellations up to 48 hours before; no refund inside 48
   hours; a substitute is always allowed.
 - Private sessions: minimum 7, maximum 12 at the bench, $135 per maker, bring
   your own snacks and non alcoholic drinks, held for a week while the group
   gathers.
-- Shipping the finished broom home: the site says the workshop packs it, takes it to the shipping company and emails tracking, with the guest paying the carrier's rate (confirmed by Dan 2026-11-13, no price shown). Still to confirm: US only or international, and typical transit time.
+- Shipping the finished broom home: the site says the workshop packs it, takes it to the shipping company and emails tracking, with flat rate shipping paid by the guest (Beth, 2026-11-13; no price shown on the site). Still to confirm: the flat rate amount and whether to publish it, US only or international, and typical transit time.
 - Gift cards do not expire (also true under Massachusetts law for 7 years).
 - Step free entrance, bench height 30 inches, lower work surface and
   wheelchair space on a day's notice, restroom on the same floor, large print

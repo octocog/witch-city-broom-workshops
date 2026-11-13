@@ -287,7 +287,7 @@ def main():
         lines.append(f"- [{p['title']}]({url(p['slug'])}): {p['desc']}")
     lines += ["", "## Facts", "",
               f"- Address: {BIZ['street']}, {BIZ['city']}, {BIZ['region']} {BIZ['zip']}",
-              f"- Phone: {BIZ['phone_display']}", f"- Price: ${BIZ['price']} per person", "- Length: 90 minutes", "- Shipping: the workshop ships each finished broom to the guest's home on request",
+              f"- Phone: {BIZ['phone_display']}", f"- Price: ${BIZ['price']} per person", "- Length: 90 minutes", "- Shipping: flat rate shipping home is available for each finished broom", "- All ages welcome; each maker may bring a guest to watch free of charge",
               f"- Book: {BOOK_URL}"]
     write(os.path.join(ROOT, "llms.txt"), "\n".join(lines) + "\n")
     open(os.path.join(ROOT, ".nojekyll"), "w").close()
