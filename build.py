@@ -10,6 +10,12 @@ import html, json, os, re, datetime
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src", "pages")
 SITE_URL = "https://www.witchcitybroomworkshops.com"
+# Preview builds live under a project path on GitHub Pages and must stay out of
+# search results. Run `python3 build.py preview` for that; plain `python3 build.py`
+# builds for the real domain at the root.
+import sys
+PREVIEW = len(sys.argv) > 1 and sys.argv[1] == "preview"
+BASE = "/witch-city-broom-workshops" if PREVIEW else ""
 TODAY = datetime.date.today().isoformat()
 
 BIZ = {
@@ -257,6 +263,9 @@ def render(page):
 
 def write(path, text):
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    if BASE and path.endswith(".html"):
+        text = text.replace('href="/', f'href="{BASE}/').replace('src="/', f'src="{BASE}/')
+        text = text.replace("<meta name=\"viewport\"", "<meta name=\"robots\" content=\"noindex, nofollow\">\n<meta name=\"viewport\"", 1)
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
 
@@ -270,7 +279,7 @@ def main():
     # sitemap.xml (404 and 'thanks' style pages excluded)
     urls = "".join(f"  <url><loc>{url(p['slug'])}</loc><lastmod>{TODAY}</lastmod></url>\n" for p in PAGES)
     write(os.path.join(ROOT, "sitemap.xml"), f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
-    write(os.path.join(ROOT, "robots.txt"), f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
+    write(os.path.join(ROOT, "robots.txt"), "User-agent: *\nDisallow: /\n" if PREVIEW else f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
     lines = [f"# {BIZ['name']}", "",
              "> Hands-on broom making workshops in downtown Salem, Massachusetts. 90 minutes, $135 per person, all materials included, every maker takes a full size broom home, or has it shipped home by the workshop. Held at 32 Derby Square. Booking runs on FareHarbor. Part of the Witch City Experiences family with Witch City Walking Tours and Witch City Broom Co.", "",
              "## Pages", ""]
@@ -282,7 +291,7 @@ def main():
               f"- Book: {BOOK_URL}"]
     write(os.path.join(ROOT, "llms.txt"), "\n".join(lines) + "\n")
     open(os.path.join(ROOT, ".nojekyll"), "w").close()
-    print(f"built {len(PAGES)} pages + 404, sitemap.xml, robots.txt, llms.txt")
+    print(f"built {len(PAGES)} pages + 404, sitemap.xml, robots.txt, llms.txt" + (" [PREVIEW build, noindex, base " + BASE + "]" if PREVIEW else ""))
 
 if __name__ == "__main__":
     main()

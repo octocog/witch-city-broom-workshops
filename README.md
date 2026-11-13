@@ -31,3 +31,9 @@ GitHub Pages from the `main` branch, root folder. Set the custom domain in the
 repository settings and add the `CNAME` file. `.nojekyll` is already here.
 
 Designed and maintained by [OctoCog Marketing & Design](https://octocog.com).
+
+## Preview build
+
+`python3 build.py preview` writes the pages with the `/witch-city-broom-workshops`
+path prefix and a noindex tag, for the GitHub Pages preview address. Before the
+custom domain goes live, run plain `python3 build.py` and commit that instead.
