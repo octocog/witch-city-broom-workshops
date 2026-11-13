@@ -7,6 +7,11 @@ below needs an answer or an action before launch.
 
 These appear on the pages as written. Change them in `src/pages/` and rebuild.
 
+- The five step timeline (home, workshop): pick your handle 0:00, wind and
+  bind 0:15, stitch the shoulders 0:40, charms and ribbons 1:05, fly home 1:30.
+  Written from how broomcorn brooms are made in general, not from watching a
+  class. Beth should correct the order, the timings and anything the class does
+  not do (handle choice, color choice, charms, name tag).
 - Session times (home, visit): Mon to Thu 11:00, 2:00, 4:30; Fri and Sat adds
   7:00; Sun 11:00 and 2:00; extra sessions in October. Illustrative.
 - Capacity of 12 makers per session.
