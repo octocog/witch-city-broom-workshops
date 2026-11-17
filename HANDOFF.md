@@ -60,16 +60,20 @@ page and guest reviews. Still to confirm with Beth:
 - The broom stands about four feet tall.
 - Scissors are the only cutting tool on the bench (terms page).
 
-## Photos to shoot
+## Photos and video (updated 2026-11-17)
 
-Replace these SVG placeholders in `images/` with photos of the same shape.
+Beth's photos are in now (from `WCBW-SITE/WCBW IMAGES`), cropped to each slot and saved as WebP in `images/`:
+- home, groups section: `group-laughing.webp` (four friends laughing in the red velvet corner)
+- workshop, who it suits: `family-brooms.webp` (family of five with a child, fits the all ages line)
+- workshop, what you make: `maker-finished-broom.webp` (from Nov 13)
+- workshop, clip: `video/building-a-broom.mp4` (720 by 1280, 30 fps, silent, click to play, poster `images/video-poster.webp`). The source clip has no audio track content, so no captions are needed. If a narrated version is ever swapped in, add a captions track.
+- about, story: `broom-co-storefront.webp` (from Nov 13); about, the craft: `maker-helping.webp`
+- private groups: `private-coven.webp` (six guests in costume)
+- gift cards and the gift journal card: `finished-brooms.webp`
+- journal, rainy day post and card: `ribbons-shelf.webp`; lore card: `hands-winding.webp`
+- social share image `og.png` is now the costumed group photo
 
-- `ph-hero.svg` 16:9, hands binding broomcorn (reserved for a future hero photo)
-- `ph-group.svg` 4:5, a group holding finished brooms
-- `ph-private.svg` 16:9, a private party at the long bench
-- `ph-detail.svg` 1:1, wrapping the binding
-- `ph-room.svg` 16:9, the room at Derby Square
-- `ph-journal-rainy.svg`, `ph-journal-lore.svg`, `ph-journal-gift.svg` 16:9
+Still wanted: a landscape exterior of 32 Derby Square (the visit page and the map section use none), a photo of a packed broom ready to ship, and a true cover shot for a future hero photo (16:9, hands binding broomcorn). The Instagram graphic in the images folder was not used. Everyone pictured should have agreed to appear on the website; the guests in the group and family photos are the ones to double check.
 
 ## After launch
 

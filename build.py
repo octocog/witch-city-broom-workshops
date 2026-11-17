@@ -264,7 +264,7 @@ def render(page):
 def write(path, text):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     if BASE and path.endswith(".html"):
-        text = text.replace('href="/', f'href="{BASE}/').replace('src="/', f'src="{BASE}/')
+        text = text.replace('href="/', f'href="{BASE}/').replace('src="/', f'src="{BASE}/').replace('poster="/', f'poster="{BASE}/')
         text = text.replace("<meta name=\"viewport\"", "<meta name=\"robots\" content=\"noindex, nofollow\">\n<meta name=\"viewport\"", 1)
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)

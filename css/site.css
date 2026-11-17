@@ -250,3 +250,9 @@ address{font-style:normal;font-family:var(--font-display);font-size:1.5rem;line-
 .slider-btn[disabled]{opacity:.35;cursor:default}
 @media (max-width:900px){.review-grid{grid-template-columns:1fr 1fr}.slider-track{grid-auto-columns:calc((100% - 24px) / 2)}}
 @media (max-width:640px){.review-grid{grid-template-columns:1fr}.slider-track{grid-auto-columns:88%}}
+
+/* Workshop clip (vertical phone video, click to play) */
+.split-video{grid-template-columns:2fr 3fr;align-items:center}
+.video-frame{max-width:360px;margin:0 auto;border-radius:var(--radius);overflow:hidden;background:var(--ink);box-shadow:0 18px 40px rgba(11,62,81,.25)}
+.video-frame video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--ink)}
+@media (max-width:760px){.split-video{grid-template-columns:1fr}.video-frame{max-width:300px}}
